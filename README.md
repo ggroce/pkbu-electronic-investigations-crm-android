@@ -1,4 +1,5 @@
 # PKBU_AndroidCaseMaintenance
 PKBU Android Case Maintenance
 
-Application that assists with the mobile entry of evidentiary data during computer crimes investigations.  Meant to assist case agents and forensic analysts.  
+This is the android implementation of a mobile data entry and communication tool, created to assist case agents and forensic analysts throughout an investigation that involves electronic devices and digital information.  
+
