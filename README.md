@@ -4,3 +4,5 @@ This is the Android implementation of a mobile data entry and communication tool
 
 ## Implementation
 Developers wishing to utilize the source must currently supply their own Google Firebase account details for accounts and data storage.  This includes Cloud Firestore, (used to store the data fields in JSON format), and a Firestore Storage implementation for storage of visual images.  
+
+![image](https://user-images.githubusercontent.com/25714007/86398497-51e97b80-bc6b-11ea-8825-c2b11d992806.png)
