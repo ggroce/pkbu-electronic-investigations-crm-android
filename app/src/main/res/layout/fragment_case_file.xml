@@ -1,0 +1,207 @@
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/CardView.Light"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginEnd="8dp"
+    app:cardCornerRadius="10dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/image_creator_card"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:elevation="12dp"
+            app:cardBackgroundColor="@color/colorAccent2"
+            app:cardCornerRadius="22dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/image_creator_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/case_originating_agency"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="16dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textColor="#FFFFFFFF"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/image_creator_card"
+            app:layout_constraintTop_toTopOf="@+id/image_creator_card"
+            android:maxLines="1"/>
+
+
+        <TextView
+            android:id="@+id/case_file_case_number"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:textAlignment="textEnd"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textColor="@color/colorWhite"
+            app:layout_constraintBottom_toBottomOf="@+id/case_file_agent"
+            app:layout_constraintEnd_toEndOf="@+id/case_originating_agency"
+            app:layout_constraintStart_toEndOf="@+id/case_file_agent" />
+
+        <TextView
+            android:id="@+id/case_file_agent"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginBottom="4dp"
+            android:maxLines="1"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textColor="@color/colorAccent2"
+            app:layout_constraintBottom_toBottomOf="@+id/image_creator_card"
+            app:layout_constraintStart_toEndOf="@+id/image_creator_card" />
+
+        <TextView
+            android:id="@+id/case_file_date"
+            android:layout_width="125dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:lineSpacingExtra="8dp"
+            android:maxLines="1"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="#FFFFFFFF"
+            app:layout_constraintStart_toStartOf="@+id/image_creator_card"
+            app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+        <TextView
+            android:id="@+id/evidence_header"
+            android:layout_width="125dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:lineSpacingExtra="8dp"
+            android:text="Evidence Items:"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/colorAccent2"
+            app:layout_constraintStart_toStartOf="@+id/case_file_date"
+            app:layout_constraintTop_toBottomOf="@+id/case_file_date" />
+
+        <TextView
+            android:id="@+id/case_file_evidence_item_count"
+            android:layout_width="125dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:lineSpacingExtra="8dp"
+            android:maxLines="1"
+            android:textAlignment="textEnd"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/colorWhite"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/case_file_date"
+            app:layout_constraintTop_toBottomOf="@+id/evidence_header" />
+
+        <TextView
+            android:id="@+id/case_file_status"
+            android:layout_width="125dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="8dp"
+            android:maxLines="1"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/colorBlack"
+            app:layout_constraintStart_toStartOf="@+id/case_file_evidence_item_count"
+            app:layout_constraintTop_toBottomOf="@+id/case_file_evidence_item_count" />
+
+        <ImageView
+            android:id="@+id/image_case_banner"
+            android:layout_width="200dp"
+            android:layout_height="140dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/fui_idp_button_background_github"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+        <TextView
+            android:id="@+id/case_file_address"
+            android:layout_width="362dp"
+            android:layout_height="16dp"
+            android:layout_marginTop="5dp"
+            android:lineSpacingExtra="8dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="#FFFFFFFF"
+            app:layout_constraintStart_toStartOf="@+id/case_file_status"
+            app:layout_constraintTop_toBottomOf="@+id/image_case_banner"
+            android:maxLines="1"/>
+
+        <TextView
+            android:id="@+id/case_file_city"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:lineSpacingExtra="8dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="#FFFFFFFF"
+            app:layout_constraintStart_toStartOf="@+id/case_file_address"
+            app:layout_constraintTop_toBottomOf="@+id/case_file_address"
+            android:maxLines="1"/>
+
+        <Button
+            android:id="@+id/bu_view_evidence"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_marginEnd="20dp"
+            android:drawableLeft="@android:drawable/ic_menu_view"
+            android:minWidth="0dp"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:text="Evidence"
+            android:textColor="#FFFFFFFF"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toStartOf="@+id/bu_edit_case"
+            app:layout_constraintTop_toTopOf="@+id/bu_edit_case" />
+
+        <Button
+            android:id="@+id/bu_edit_case"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="15dp"
+            android:drawableLeft="@android:drawable/ic_menu_preferences"
+            android:minWidth="0dp"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:text="Edit"
+            android:textColor="#FFFFFFFF"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/case_file_address" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="393dp"
+            android:layout_height="2dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/colorPrimaryDark"
+            android:backgroundTint="@color/colorPrimaryDark"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/image_creator_card" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

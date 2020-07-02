@@ -1,0 +1,99 @@
+<resources>
+    <string name="app_name">PKBU</string>
+    <string name="title_activity_main">Case Maintenance</string>
+    <string name="tab_text_1">Case Files</string>
+    <string name="tab_text_2">Evidence Items</string>
+    <string name="tab_text_3">Edit Case File</string>
+
+    <string name="menu_delete">Delete</string>
+    <string name="menu_settings">Settings</string>
+    <string name="menu_search">Search Evidence</string>
+    <string name="menu_home">Home</string>
+
+    <string-array name="evidence_complete">
+        <item>No</item>
+        <item>Yes</item>
+    </string-array>
+
+    <string-array name="evidence_locked">
+        <item>Unknown</item>
+        <item>No</item>
+        <item>Yes</item>
+    </string-array>
+
+    <string-array name="evidence_status">
+        <item>Unknown</item>
+        <item>Awaiting Authority</item>
+        <item>Triage In Progress</item>
+        <item>Triage Complete</item>
+        <item>Processing Scheduled</item>
+        <item>Processing In Progress</item>
+        <item>Processing Halted</item>
+        <item>Processing Complete</item>
+    </string-array>
+
+    <string-array name="evidence_relevancy">
+        <item>Unknown</item>
+        <item>None</item>
+        <item>Cleared</item>
+        <item>Possible Interest</item>
+        <item>Interest</item>
+        <item>Target Evidence</item>
+    </string-array>
+
+    <string-array name="evidence_type">
+        <item>Unknown</item>
+        <item>Desktop</item>
+        <item>Tower</item>
+        <item>Laptop</item>
+        <item>Cellphone</item>
+        <item>Tablet</item>
+        <item>USB Stick</item>
+        <item>External Hard Drive</item>
+        <item>Internal Hard Drive</item>
+        <item>Memory Card</item>
+        <item>GPS Unit</item>
+        <item>Monitor</item>
+        <item>Misc Cabling</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="evidence_search_field_descriptions">
+        <item>Entry Date</item>
+        <item>Device Type</item>
+        <item>Make</item>
+        <item>Model</item>
+        <item>Last Edited By</item>
+        <item>Found By</item>
+        <item>Serial Number</item>
+        <item>Descriptors</item>
+        <item>Processing Notes</item>
+        <item>Account Info</item>
+        <item>Suspect</item>
+        <item>Relevancy</item>
+        <item>Locked?</item>
+        <item>Status</item>
+        <item>Is Entry Complete?</item>
+    </string-array>
+
+    <string-array name="evidence_search_fields_by_model_name">
+        <item>evidenceEntryDate</item>
+        <item>evidenceType_lower</item>
+        <item>evidenceMake_lower</item>
+        <item>evidenceModel_lower</item>
+        <item>evidenceLastEditedBy_lower</item>
+        <item>evidenceFoundBy_lower</item>
+        <item>evidenceSerialNumber_lower</item>
+        <item>evidenceDescriptor_lower</item>
+        <item>evidenceProcessingNotes_lower</item>
+        <item>evidenceAccountInfo_lower</item>
+        <item>evidenceSuspectedOwner_lower</item>
+        <item>evidenceRelevancy_lower</item>
+        <item>evidenceLocked_lower</item>
+        <item>evidenceStatus_lower</item>
+        <item>evidenceEntryComplete_lower</item>
+    </string-array>
+
+
+
+</resources>
