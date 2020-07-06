@@ -16,7 +16,7 @@ The application begins by having the user create an account.  After account crea
 <img src="https://user-images.githubusercontent.com/25714007/86613528-58cc0300-bf77-11ea-81da-6d53ca438a0b.png" width="400">
 <br>
 <i>Item entry screens</i>
-<img src="https://user-images.githubusercontent.com/25714007/86615014-7ac68500-bf79-11ea-96c2-60f6c27b099b.png" width="600">
+<img src="https://user-images.githubusercontent.com/25714007/86615014-7ac68500-bf79-11ea-96c2-60f6c27b099b.png" width="800">
 <br>
 <i>Sample of item search options</i>
 <img src="https://user-images.githubusercontent.com/25714007/86613958-e7408480-bf77-11ea-947e-adf76d542d8e.png" width="400">
