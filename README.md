@@ -10,7 +10,7 @@ The application begins by having the user create an account.  After account crea
 
 <br>
 <i>Pane 1: Initial view holding various case cards.  Pane 2: View of cards, representing electronic items entered into a case</i>
-<img src="https://user-images.githubusercontent.com/25714007/86615622-4ef7cf00-bf7a-11ea-9bc4-23db154ded0c.png" width="400">
+<img src="https://user-images.githubusercontent.com/25714007/86615622-4ef7cf00-bf7a-11ea-9bc4-23db154ded0c.png" width="800">
 <br>
 <i>Item entry screens</i>
 <img src="https://user-images.githubusercontent.com/25714007/86615014-7ac68500-bf79-11ea-96c2-60f6c27b099b.png" width="800">
