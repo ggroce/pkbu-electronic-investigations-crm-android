@@ -15,6 +15,7 @@ import android.view.ViewGroup
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.core.graphics.drawable.toBitmap
+import androidx.core.widget.NestedScrollView
 import androidx.lifecycle.ViewModelProviders
 import androidx.lifecycle.Observer
 import com.squareup.picasso.Picasso
@@ -70,6 +71,10 @@ class EvidenceItemEdit : Fragment() {
         val view: View = inflater.inflate(R.layout.fragment_evidence_item_edit, container, false)
         mViewModel =
             ViewModelProviders.of(requireActivity()).get(MainViewModel::class.java)
+
+        val nestedScrollView: NestedScrollView = view.findViewById(R.id.evidence_item_edit)
+        val runnable = Runnable { nestedScrollView.fullScroll(ScrollView.FOCUS_UP) }
+        nestedScrollView.post(runnable)
 
         // Bind widgets ////////////////
         textEvidenceLastEditedBy = view.findViewById(R.id.textView_last_edited_by)
