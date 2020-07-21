@@ -12,8 +12,10 @@ import android.view.View
 import android.view.WindowManager
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
+import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -23,6 +25,7 @@ import com.firebase.ui.auth.ErrorCodes
 import com.firebase.ui.auth.IdpResponse
 import com.google.android.material.bottomappbar.BottomAppBar
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.android.material.navigation.NavigationView
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.google.firebase.analytics.FirebaseAnalytics
@@ -47,6 +50,11 @@ class MainActivity : CaseFileList.CaseFileListListener,
     private var viewPager: ViewPager2? = null
     private var tabs: TabLayout? = null
     private var deleteIcon: MenuItem? = null
+
+    private var drawerLayout: DrawerLayout? = null
+    private var actionBarDrawerToggle: ActionBarDrawerToggle? = null
+    private var navigationView: NavigationView? = null
+
     private val caseFileList: CaseFileList = CaseFileList.newInstance()
     private val userEvidenceItemsList: UserEvidenceItemsList = UserEvidenceItemsList.newInstance()
     private val caseEvidenceItemsList: CaseEvidenceItemsList = CaseEvidenceItemsList.newInstance()
@@ -116,6 +124,16 @@ class MainActivity : CaseFileList.CaseFileListListener,
         val bottomAppBar: BottomAppBar = findViewById(R.id.bottomAppBar)
         val bottomAppBarBehavior = bottomAppBar.behavior
         setSupportActionBar(bottomAppBar)
+
+        // Setup navigation drawer
+        drawerLayout = findViewById(R.id.drawer_layout)
+        navigationView = findViewById(R.id.nav_view)
+        actionBarDrawerToggle = ActionBarDrawerToggle(this, drawerLayout, bottomAppBar,
+            R.string.drawerOpen, R.string.drawerClose)
+        drawerLayout!!.addDrawerListener(actionBarDrawerToggle!!)
+        actionBarDrawerToggle!!.isDrawerIndicatorEnabled = true
+        actionBarDrawerToggle!!.drawerArrowDrawable.color = resources.getColor(R.color.colorWhite)
+        actionBarDrawerToggle!!.syncState()
 
         // Listen to tabs and push bottom app bar back up if tab is changed //////////////
         // Listen to tabs and select appropriate FAB icon for selected screen //////////////

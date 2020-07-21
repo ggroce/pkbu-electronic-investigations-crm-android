@@ -9,6 +9,8 @@
     <string name="menu_settings">Settings</string>
     <string name="menu_search">Search Evidence</string>
     <string name="menu_home">Home</string>
+    <string name="drawerClose">drawerClose</string>
+    <string name="drawerOpen">drawerOpen</string>
 
     <string-array name="evidence_complete">
         <item>No</item>
