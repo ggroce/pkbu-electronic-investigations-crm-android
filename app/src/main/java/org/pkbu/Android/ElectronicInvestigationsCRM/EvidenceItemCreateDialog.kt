@@ -1,4 +1,4 @@
-package org.pkbu.ElectronicInvestigationsCRM
+package org.pkbu.Android.ElectronicInvestigationsCRM
 
 import android.content.Context
 import android.os.Bundle
@@ -9,10 +9,10 @@ import android.widget.*
 import androidx.appcompat.app.AppCompatDialogFragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-import org.pkbu.ElectronicInvestigationsCRM.model.CaseFile
-import org.pkbu.ElectronicInvestigationsCRM.model.EvidenceItem
-import org.pkbu.ElectronicInvestigationsCRM.model.User
-import org.pkbu.ElectronicInvestigationsCRM.viewmodel.MainViewModel
+import org.pkbu.Android.ElectronicInvestigationsCRM.model.CaseFile
+import org.pkbu.Android.ElectronicInvestigationsCRM.model.EvidenceItem
+import org.pkbu.Android.ElectronicInvestigationsCRM.model.User
+import org.pkbu.Android.ElectronicInvestigationsCRM.viewmodel.MainViewModel
 import java.util.*
 
 /*

@@ -1,4 +1,4 @@
-package org.pkbu.ElectronicInvestigationsCRM.ui
+package org.pkbu.Android.ElectronicInvestigationsCRM.ui
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity

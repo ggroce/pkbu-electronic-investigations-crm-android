@@ -1,4 +1,4 @@
-package org.pkbu.ElectronicInvestigationsCRM.model
+package org.pkbu.Android.ElectronicInvestigationsCRM.model
 
 import com.google.firebase.firestore.ServerTimestamp
 import java.util.*

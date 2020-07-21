@@ -1,4 +1,4 @@
-package org.pkbu.ElectronicInvestigationsCRM
+package org.pkbu.Android.ElectronicInvestigationsCRM
 
 import android.app.Activity
 import android.content.Context
@@ -30,9 +30,9 @@ import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.auth.FirebaseAuth
-import org.pkbu.ElectronicInvestigationsCRM.model.User
-import org.pkbu.ElectronicInvestigationsCRM.ui.SectionPagerAdapter
-import org.pkbu.ElectronicInvestigationsCRM.viewmodel.MainViewModel
+import org.pkbu.Android.ElectronicInvestigationsCRM.model.User
+import org.pkbu.Android.ElectronicInvestigationsCRM.ui.SectionPagerAdapter
+import org.pkbu.Android.ElectronicInvestigationsCRM.viewmodel.MainViewModel
 
 class MainActivity : CaseFileList.CaseFileListListener,
     UserEvidenceItemsList.UserEvidenceItemsListener, CaseEvidenceItemsList.CaseEvidenceItemsListener,

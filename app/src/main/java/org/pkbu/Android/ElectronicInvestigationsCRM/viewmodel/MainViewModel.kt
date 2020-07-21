@@ -1,12 +1,12 @@
-package org.pkbu.ElectronicInvestigationsCRM.viewmodel
+package org.pkbu.Android.ElectronicInvestigationsCRM.viewmodel
 
 import android.app.Application
 import androidx.lifecycle.*
 import com.google.firebase.auth.FirebaseAuth
-import org.pkbu.ElectronicInvestigationsCRM.model.CaseFile
-import org.pkbu.ElectronicInvestigationsCRM.model.EvidenceItem
-import org.pkbu.ElectronicInvestigationsCRM.model.User
-import org.pkbu.ElectronicInvestigationsCRM.repository.FirestoreRepository
+import org.pkbu.Android.ElectronicInvestigationsCRM.model.CaseFile
+import org.pkbu.Android.ElectronicInvestigationsCRM.model.EvidenceItem
+import org.pkbu.Android.ElectronicInvestigationsCRM.model.User
+import org.pkbu.Android.ElectronicInvestigationsCRM.repository.FirestoreRepository
 
 class MainViewModel(application: Application) : AndroidViewModel(application) {
 

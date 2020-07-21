@@ -1,4 +1,4 @@
-package org.pkbu.ElectronicInvestigationsCRM
+package org.pkbu.Android.ElectronicInvestigationsCRM
 
 import android.app.DatePickerDialog
 import android.content.Context
@@ -21,12 +21,12 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.core.graphics.drawable.toBitmap
 import androidx.lifecycle.ViewModelProviders
-import org.pkbu.ElectronicInvestigationsCRM.model.CaseFile
+import org.pkbu.Android.ElectronicInvestigationsCRM.model.CaseFile
 import androidx.lifecycle.Observer
 import com.squareup.picasso.Picasso
-import org.pkbu.ElectronicInvestigationsCRM.model.User
-import org.pkbu.ElectronicInvestigationsCRM.utils.DateUtils
-import org.pkbu.ElectronicInvestigationsCRM.viewmodel.MainViewModel
+import org.pkbu.Android.ElectronicInvestigationsCRM.model.User
+import org.pkbu.Android.ElectronicInvestigationsCRM.utils.DateUtils
+import org.pkbu.Android.ElectronicInvestigationsCRM.viewmodel.MainViewModel
 import java.io.ByteArrayOutputStream
 import java.util.*
 

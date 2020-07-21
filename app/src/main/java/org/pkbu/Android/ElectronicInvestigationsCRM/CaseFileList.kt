@@ -1,4 +1,4 @@
-package org.pkbu.ElectronicInvestigationsCRM
+package org.pkbu.Android.ElectronicInvestigationsCRM
 
 import android.content.Context
 import android.os.Bundle
@@ -15,9 +15,9 @@ import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
-import org.pkbu.ElectronicInvestigationsCRM.adapter.CaseFileAdapter
-import org.pkbu.ElectronicInvestigationsCRM.model.CaseFile
-import org.pkbu.ElectronicInvestigationsCRM.viewmodel.MainViewModel
+import org.pkbu.Android.ElectronicInvestigationsCRM.adapter.CaseFileAdapter
+import org.pkbu.Android.ElectronicInvestigationsCRM.model.CaseFile
+import org.pkbu.Android.ElectronicInvestigationsCRM.viewmodel.MainViewModel
 
 class CaseFileList : CaseFileAdapter.OnItemClickListener, Fragment() {
 

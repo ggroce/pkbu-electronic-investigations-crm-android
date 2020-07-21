@@ -1,4 +1,4 @@
-package org.pkbu.ElectronicInvestigationsCRM.adapter
+package org.pkbu.Android.ElectronicInvestigationsCRM.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -13,13 +13,13 @@ import com.firebase.ui.firestore.FirestoreRecyclerAdapter
 import com.firebase.ui.firestore.FirestoreRecyclerOptions
 import com.google.firebase.firestore.DocumentSnapshot
 import com.squareup.picasso.Picasso
-import org.pkbu.ElectronicInvestigationsCRM.R
-import org.pkbu.ElectronicInvestigationsCRM.model.EvidenceItem
-import org.pkbu.ElectronicInvestigationsCRM.utils.DateUtils
+import org.pkbu.Android.ElectronicInvestigationsCRM.R
+import org.pkbu.Android.ElectronicInvestigationsCRM.model.EvidenceItem
+import org.pkbu.Android.ElectronicInvestigationsCRM.utils.DateUtils
 
-class CaseEvidenceItemAdapter(options: FirestoreRecyclerOptions<EvidenceItem>) :
+class SearchEvidenceItemAdapter(options: FirestoreRecyclerOptions<EvidenceItem>) :
     FirestoreRecyclerAdapter<EvidenceItem,
-            CaseEvidenceItemAdapter.EvidenceItemHolder>(options) {
+            SearchEvidenceItemAdapter.EvidenceItemHolder>(options) {
 
     private var listener: OnItemClickListener? = null
     private var context: Context? = null

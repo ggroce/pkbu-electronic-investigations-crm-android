@@ -1,4 +1,4 @@
-package org.pkbu.ElectronicInvestigationsCRM
+package org.pkbu.Android.ElectronicInvestigationsCRM
 
 
 import android.content.Context
@@ -19,10 +19,10 @@ import androidx.core.widget.NestedScrollView
 import androidx.lifecycle.ViewModelProviders
 import androidx.lifecycle.Observer
 import com.squareup.picasso.Picasso
-import org.pkbu.ElectronicInvestigationsCRM.model.CaseFile
-import org.pkbu.ElectronicInvestigationsCRM.model.EvidenceItem
-import org.pkbu.ElectronicInvestigationsCRM.model.User
-import org.pkbu.ElectronicInvestigationsCRM.viewmodel.MainViewModel
+import org.pkbu.Android.ElectronicInvestigationsCRM.model.CaseFile
+import org.pkbu.Android.ElectronicInvestigationsCRM.model.EvidenceItem
+import org.pkbu.Android.ElectronicInvestigationsCRM.model.User
+import org.pkbu.Android.ElectronicInvestigationsCRM.viewmodel.MainViewModel
 import java.io.ByteArrayOutputStream
 
 class EvidenceItemEdit : Fragment() {

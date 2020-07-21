@@ -1,4 +1,4 @@
-package org.pkbu.ElectronicInvestigationsCRM.repository
+package org.pkbu.Android.ElectronicInvestigationsCRM.repository
 
 import android.content.Context
 import android.util.Log
@@ -10,9 +10,9 @@ import com.google.firebase.firestore.SetOptions
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import com.google.firebase.storage.UploadTask
-import org.pkbu.ElectronicInvestigationsCRM.model.CaseFile
-import org.pkbu.ElectronicInvestigationsCRM.model.EvidenceItem
-import org.pkbu.ElectronicInvestigationsCRM.model.User
+import org.pkbu.Android.ElectronicInvestigationsCRM.model.CaseFile
+import org.pkbu.Android.ElectronicInvestigationsCRM.model.EvidenceItem
+import org.pkbu.Android.ElectronicInvestigationsCRM.model.User
 
 
 

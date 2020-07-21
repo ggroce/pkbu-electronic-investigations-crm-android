@@ -1,4 +1,4 @@
-package org.pkbu.ElectronicInvestigationsCRM.adapter
+package org.pkbu.Android.ElectronicInvestigationsCRM.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -11,9 +11,9 @@ import com.firebase.ui.firestore.FirestoreRecyclerAdapter
 import com.firebase.ui.firestore.FirestoreRecyclerOptions
 import com.google.firebase.firestore.DocumentSnapshot
 import com.squareup.picasso.Picasso
-import org.pkbu.ElectronicInvestigationsCRM.R
-import org.pkbu.ElectronicInvestigationsCRM.model.CaseFile
-import org.pkbu.ElectronicInvestigationsCRM.utils.DateUtils
+import org.pkbu.Android.ElectronicInvestigationsCRM.R
+import org.pkbu.Android.ElectronicInvestigationsCRM.model.CaseFile
+import org.pkbu.Android.ElectronicInvestigationsCRM.utils.DateUtils
 
 class CaseFileAdapter(options: FirestoreRecyclerOptions<CaseFile>) :
     FirestoreRecyclerAdapter<CaseFile, CaseFileAdapter.CaseFileHolder>(options) {

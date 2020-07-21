@@ -1,4 +1,4 @@
-package org.pkbu.ElectronicInvestigationsCRM
+package org.pkbu.Android.ElectronicInvestigationsCRM
 
 import android.content.Context
 import android.os.Bundle
@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -14,17 +13,17 @@ import com.firebase.ui.firestore.FirestoreRecyclerOptions
 import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
-import org.pkbu.ElectronicInvestigationsCRM.adapter.CaseEvidenceItemAdapter
-import org.pkbu.ElectronicInvestigationsCRM.model.EvidenceItem
-import org.pkbu.ElectronicInvestigationsCRM.viewmodel.MainViewModel
+import org.pkbu.Android.ElectronicInvestigationsCRM.adapter.SearchEvidenceItemAdapter
+import org.pkbu.Android.ElectronicInvestigationsCRM.model.EvidenceItem
+import org.pkbu.Android.ElectronicInvestigationsCRM.viewmodel.MainViewModel
 
-class CaseEvidenceItemsList : CaseEvidenceItemAdapter.OnItemClickListener, Fragment() {
+class EvidenceSearchResultsList : SearchEvidenceItemAdapter.OnItemClickListener, Fragment() {
 
     private lateinit var mViewModel: MainViewModel
-    private var listener: CaseEvidenceItemsListener? = null
+    private var listener: EvidenceSearchResultsListener? = null
 
     private lateinit var db: FirebaseFirestore
-    private lateinit var caseEvidenceItemAdapter: CaseEvidenceItemAdapter
+    private lateinit var searchEvidenceItemAdapter: SearchEvidenceItemAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,54 +41,58 @@ class CaseEvidenceItemsList : CaseEvidenceItemAdapter.OnItemClickListener, Fragm
 
         // Setup firestore query for data listed in recycler view: ////////////////
         val dbRef = db.collection(EVIDENCE_ITEMS)
-        val query: Query = dbRef.whereEqualTo("caseId",
-            mViewModel.getCaseIdForEvidence())
+
+        val searchField = mViewModel.getEvidenceSearchField()
+        val searchString = mViewModel.getEvidenceSearchString()
+        val query: Query = dbRef.whereGreaterThanOrEqualTo(searchField, searchString)
+            .orderBy(searchField).endAt("$searchString~")
 
         // Setup recycler view //////////////////
         val recyclerView: RecyclerView = view.findViewById(R.id.evidence_item_recycler_view)
         val options = FirestoreRecyclerOptions.Builder<EvidenceItem>().setQuery(query,
             EvidenceItem::class.java).build()
 
-        caseEvidenceItemAdapter = CaseEvidenceItemAdapter(options)
+        searchEvidenceItemAdapter = SearchEvidenceItemAdapter(options)
 
         recyclerView.setHasFixedSize(true)
         recyclerView.layoutManager = LinearLayoutManager(context)
-        recyclerView.adapter = caseEvidenceItemAdapter
+        recyclerView.adapter = searchEvidenceItemAdapter
 
-        caseEvidenceItemAdapter.setOnItemClickListener(this)
+        searchEvidenceItemAdapter.setOnItemClickListener(this)
 
         return view
     }
 
     fun refreshQuery() {
         val dbRef = db.collection(EVIDENCE_ITEMS)
-        val query: Query = dbRef.whereEqualTo("caseId",
-            mViewModel.getCaseIdForEvidence())
-
+        val searchField = mViewModel.getEvidenceSearchField()
+        val searchString = mViewModel.getEvidenceSearchString()
+        val query: Query = dbRef.whereGreaterThanOrEqualTo(searchField, searchString)
+            .orderBy(searchField).endAt("$searchString~")
         val options = FirestoreRecyclerOptions.Builder<EvidenceItem>().setQuery(query,
             EvidenceItem::class.java).build()
 
-        caseEvidenceItemAdapter.updateOptions(options)
+        searchEvidenceItemAdapter.updateOptions(options)
     }
 
     override fun onStart() {
         super.onStart()
         // Recycler view starts listening for data //////////
-        caseEvidenceItemAdapter.startListening()
+        searchEvidenceItemAdapter.startListening()
     }
 
     override fun onStop() {
         super.onStop()
         // Recycler view stops listening for data //////////
-        caseEvidenceItemAdapter.stopListening()
+        searchEvidenceItemAdapter.stopListening()
     }
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        if (context is CaseEvidenceItemsListener) {
+        if (context is EvidenceSearchResultsListener) {
             listener = context
         } else {
-            throw RuntimeException("$context must implement CaseEvidenceItemsList Interfaces")
+            throw RuntimeException("$context must implement EvidenceSearchResults Interfaces")
         }
     }
 
@@ -102,24 +105,19 @@ class CaseEvidenceItemsList : CaseEvidenceItemAdapter.OnItemClickListener, Fragm
         val evidenceItem = documentSnapshot!!.toObject(EvidenceItem::class.java)
         val id = documentSnapshot.id
         val path = documentSnapshot.reference.path
-        listener!!.onCaseEvidenceItemsListener(evidenceItem!!.evidenceId!!)
+        listener!!.onEvidenceSearchResultsListener(evidenceItem!!.evidenceId!!)
     }
 
-    fun onClickAdd(fm: FragmentManager) {
-        val dialog: EvidenceItemCreateDialog = EvidenceItemCreateDialog.newInstance()
-        dialog.show(fm, "EvidenceItemInputFrag")
-    }
-
-    interface CaseEvidenceItemsListener {
-        fun onCaseEvidenceItemsListener(evidenceId: String)
+    interface EvidenceSearchResultsListener {
+        fun onEvidenceSearchResultsListener(evidenceId: String)
     }
 
     companion object {
         private const val EVIDENCE_ITEMS = "EvidenceItems"
 
         @JvmStatic
-        fun newInstance(): CaseEvidenceItemsList {
-            return CaseEvidenceItemsList()
+        fun newInstance(): EvidenceSearchResultsList {
+            return EvidenceSearchResultsList()
 
         }
     }

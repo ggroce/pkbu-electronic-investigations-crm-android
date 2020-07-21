@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="org.pkbu.ElectronicInvestigationsCRM">
+    package="org.pkbu.Android.ElectronicInvestigationsCRM">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -17,7 +17,7 @@
         <uses-library android:name="android.test.runner" android:required="false" />
 
         <activity
-            android:name="org.pkbu.ElectronicInvestigationsCRM.MainActivity"
+            android:name="org.pkbu.Android.ElectronicInvestigationsCRM.MainActivity"
             android:label="@string/title_activity_main"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
