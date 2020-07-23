@@ -9,11 +9,15 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="drawerArrowStyle">@style/Drawericon</item>
     </style>
 
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
@@ -23,6 +27,10 @@
     <style name="AppTheme.TabLayout" parent="Widget.MaterialComponents.TabLayout">
         <item name="android:background">@color/colorPrimary</item>
         <item name="tabIndicatorColor">@color/colorAccent</item>
+    </style>
+
+    <style name="Drawericon" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="color">@color/colorSecondary</item>
     </style>
 
 </resources>

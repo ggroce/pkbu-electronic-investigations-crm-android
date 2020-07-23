@@ -15,6 +15,7 @@ import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
+import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Observer
@@ -39,7 +40,7 @@ class MainActivity : CaseFileList.CaseFileListListener,
     CaseFileCreateDialog.CaseFileCreateDialogListener, CaseFileEdit.CaseFileEditListener,
     EvidenceItemEdit.EvidenceItemEditListener, EvidenceItemCreateDialog.EvidenceItemCreateDialogListener,
     UserInfoDialog.UserInfoDialogListener, EvidenceSearchDialog.EvidenceSearchDialogListener,
-    EvidenceSearchResultsList.EvidenceSearchResultsListener,
+    EvidenceSearchResultsList.EvidenceSearchResultsListener, NavigationView.OnNavigationItemSelectedListener,
     AppCompatActivity() {
 
     private lateinit var mViewModel: MainViewModel
@@ -128,11 +129,11 @@ class MainActivity : CaseFileList.CaseFileListListener,
         // Setup navigation drawer
         drawerLayout = findViewById(R.id.drawer_layout)
         navigationView = findViewById(R.id.nav_view)
+        navigationView!!.setNavigationItemSelectedListener(this)
         actionBarDrawerToggle = ActionBarDrawerToggle(this, drawerLayout, bottomAppBar,
             R.string.drawerOpen, R.string.drawerClose)
         drawerLayout!!.addDrawerListener(actionBarDrawerToggle!!)
         actionBarDrawerToggle!!.isDrawerIndicatorEnabled = true
-        actionBarDrawerToggle!!.drawerArrowDrawable.color = resources.getColor(R.color.colorWhite)
         actionBarDrawerToggle!!.syncState()
 
         // Listen to tabs and push bottom app bar back up if tab is changed //////////////
@@ -205,9 +206,9 @@ class MainActivity : CaseFileList.CaseFileListListener,
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            android.R.id.home -> {
-                openUserInfoDialog()
-            }
+//            android.R.id.home -> {
+//                openUserInfoDialog()
+//            }
             R.id.menuDelete -> {
                 var currentScreen = pagerAdapter!!.getPageTitle(tabs!!.selectedTabPosition)
                 if (currentScreen == CASE_FILE_EDIT_TITLE) {
@@ -224,6 +225,20 @@ class MainActivity : CaseFileList.CaseFileListListener,
                 newTab!!.select()
             }
         }
+        return true
+    }
+
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.nav_edit_user -> {
+                openUserInfoDialog()
+            }
+            R.id.nav_generate_stats -> {
+                Toast.makeText(this, "Option not implemented",
+                    Toast.LENGTH_SHORT).show()
+            }
+        }
+        drawerLayout!!.closeDrawer(GravityCompat.START)
         return true
     }
 
